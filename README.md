@@ -1,4 +1,4 @@
-#Open Wallet Stack
+# Open Wallet Stack
 
 Open Wallet Stack is a collection of software forked from [bitcore](https://bitcore.io) and [Copay](https://copay.io), with the intention of creating a working group outside of the control of any one company.  OWS development has been funded by multiple organizations to date. If you are interested in contributing, please feel free to create Github issues, PRs, etc. We welcome any contribution.
 
