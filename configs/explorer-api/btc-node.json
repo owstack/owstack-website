@@ -1,0 +1,26 @@
+{
+  "network": "livenet",
+  "port": 3001,
+  "services": [
+    "explorer-api",
+    "bitcoind",
+    "web"
+  ],
+  "servicesConfig": {
+    "bitcoind": {
+      "connect": [{
+          "zmqpubrawtx": "tcp://btc-mainnet:28332",
+          "zmqpubhashblock": "tcp://btc-mainnet:28332",
+          "rpcprotocol": "http",
+          "rpchost": "btc-mainnet-litecoin",
+          "rpcport": 9332,
+          "rpcuser": "someUser",
+          "rpcpassword": "somePassword"
+      }]
+    },
+    "explorer-api": {
+      "module": "@owstack/btc-explorer-api",
+      "apiPrefix": "explorer-api"
+    }
+  }
+}

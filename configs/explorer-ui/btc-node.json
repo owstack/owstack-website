@@ -1,0 +1,39 @@
+{
+  "port": 3001,
+  "services": [
+    "ows-explorer",
+    "web"
+  ],
+  "servicesConfig": {
+    "ows-explorer": {
+      "module": "@owstack/ows-explorer",
+      "routePrefix": "",
+      "fullNodes": [
+        {
+          "url": "http://btc.testnet.explorer-api.owstack.org",
+          "apiPrefix": "explorer-api"
+        },
+        {
+          "url": "http://btc.livenet.explorer-api.owstack.org",
+          "apiPrefix": "explorer-api"
+        },
+        {
+          "url": "http://bch.testnet.explorer-api.owstack.org",
+          "apiPrefix": "explorer-api"
+        },
+        {
+          "url": "http://bch.livenet.explorer-api.owstack.org",
+          "apiPrefix": "explorer-api"
+        },
+        {
+          "url": "http://ltc.testnet.explorer-api.owstack.org",
+          "apiPrefix": "explorer-api"
+        },
+        {
+          "url": "http://ltc.livenet.explorer-api.owstack.org",
+          "apiPrefix": "explorer-api"
+        }
+      ]
+    }
+  }
+}

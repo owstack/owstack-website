@@ -1,0 +1,59 @@
+{
+  "network": "livenet",
+  "port": 3001,
+  "services": [
+    "btc-wallet-service",
+    "web"
+  ],
+  "servicesConfig": {
+    "btc-wallet-service": {
+        "module": "@owstack/btc-wallet-service",
+        "config": {
+          "basePath": "/btcws/api",
+          "disableLogs": false,
+          "port": 3232,
+          "storageOpts": {
+            "mongoDb": {
+              "uri": "mongodb://user:password@mongo-0.mongo:27017,mongo-1.mongo:27017,mongo-2.mongo:27017/btc-ws?replicaSet=rs0"
+            }
+          },
+          "lockOpts": {
+            "lockerServer": {
+              "host": "localhost",
+              "port": 3231
+            }
+          },
+          "messageBrokerOpts": {
+            "messageBrokerServer": {
+              "url": "http://localhost:3380"
+            }
+          },
+          "blockchainExplorerOpts": {
+            "defaultProvider": "explorer",
+            "explorer": {
+                "livenet": {
+                  "url": "http://btc.livenet.explorer-api.owstack.org",
+                  "apiPrefix": "/explorer-api"
+                },
+                "testnet": {
+                  "url": "http://btc.testnet.explorer-api.owstack.org",
+                  "apiPrefix": "/explorer-api"
+                }
+            }
+          },
+          "pushNotificationsOpts": {
+            "templatePath": "./lib/templates",
+            "defaultLanguage": "en",
+            "defaultUnit": "btc",
+            "subjectPrefix": "",
+            "pushServerUrl": "https://fcm.googleapis.com/fcm",
+            "authorizationKey": ""
+          },
+          "fiatRateServiceOpts": {
+            "defaultProvider": "Bitstamp",
+            "fetchInterval": 30
+          }
+        }
+    }
+  }
+}
